@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -11,17 +12,9 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Spacecraft = /** @class */ (function () {
-    function Spacecraft(propulsor) {
-        this.propulsor = propulsor;
-    }
-    Spacecraft.prototype.jumpIntoHyperspace = function () {
-        console.log("Entering hyperspace with " + this.propulsor);
-    };
-    return Spacecraft;
-}());
-var falcon = new Spacecraft('hyperdrive');
-falcon.jumpIntoHyperspace();
+exports.__esModule = true;
+exports.MillenniumFalcon = void 0;
+var base_ships_1 = require("./base-ships");
 var MillenniumFalcon = /** @class */ (function (_super) {
     __extends(MillenniumFalcon, _super);
     function MillenniumFalcon(propulsor, cargoContainers) {
@@ -40,14 +33,5 @@ var MillenniumFalcon = /** @class */ (function (_super) {
         }
     };
     return MillenniumFalcon;
-}(Spacecraft));
-var mf = new MillenniumFalcon('hyperdrive');
-mf.jumpIntoHyperspace();
-function goodForTheJob(ship) {
-    return ship.cargoContainers > 2;
-}
-function goodForSmuggle(ship) {
-    return ship.hiddenContainers > 2;
-}
-console.log(goodForTheJob(mf));
-console.log(goodForSmuggle(mf));
+}(base_ships_1.Spacecraft));
+exports.MillenniumFalcon = MillenniumFalcon;
